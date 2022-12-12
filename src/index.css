@@ -1,6 +1,11 @@
+@font-face {
+  font-family: 'RubikGemstons';
+  src: url("../public/fonts/rubik-gemstones/RubikGemstones-Regular.ttf");
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: RubikGemstons, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -11,3 +16,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+html {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 10vmin;
+  color: hsl(280, 100%, 90%);
+}
+

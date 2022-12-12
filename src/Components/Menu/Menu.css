@@ -1,0 +1,43 @@
+.Menu {
+    width: 70vw;
+    display: grid;
+    place-items: center;
+    grid-template-rows: 1fr 2fr;
+}
+
+.element {
+    width: 100%;
+    height: 10vmin;
+    background: linear-gradient(18deg, hsl(260, 40%, 25%), hsl(280, 70%, 55%));
+    border: 0.8vmin solid transparent;
+    border-image: linear-gradient(90deg, hsl(260, 50%, 40%), hsl(280, 80%, 60%));
+    border-image-slice: 40%;
+    box-shadow: 0 0 1vmin hsl(280, 70%, 50%);
+    margin: 1vmin;
+    color: hsl(280, 100%, 90%);
+    font-size: 5vmin;
+    display: grid;
+    place-items: center;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.difficulty {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1vmin;
+    width: 100%;
+}
+
+.card-set {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+    column-gap: 1vmin;
+    width: 100%;
+}
+.card-set p {
+    font-size: 2.4vmin;
+}
