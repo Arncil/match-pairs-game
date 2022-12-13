@@ -30,8 +30,9 @@
     height: 20vmin;
 }
 
-.card {
+.game-easy .card {
     font-size: 10vmin;
+    padding: 0; margin: 0;
     background: linear-gradient(201deg, hsl(285, 50%, 81%), hsl(233, 50%, 83%));
     width: 95%;
     height: 95%;

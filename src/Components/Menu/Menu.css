@@ -2,7 +2,6 @@
     width: 70vw;
     display: grid;
     place-items: center;
-    grid-template-rows: 1fr 2fr;
 }
 
 .element {

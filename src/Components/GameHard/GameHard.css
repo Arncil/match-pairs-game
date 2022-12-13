@@ -1,4 +1,4 @@
-.game-normal {
+.game-hard {
     display: grid;
     place-items: center;
     grid-template-columns: repeat(4, 1fr);
@@ -8,14 +8,15 @@
     height: 100%;
 }
 
-.game-normal .element {
+.game-hard .element {
     font-size: 4vmin;
     height: 85%;
     width: 95%;
 }
 
-.card {
+.game-hard .card {
     font-size: 8vmin;
+    padding: 0; margin: 0;
     background: linear-gradient(201deg, hsl(285, 50%, 81%), hsl(233, 50%, 83%));
     width: 95%;
     height: 95%;

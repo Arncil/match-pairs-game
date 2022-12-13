@@ -12,6 +12,7 @@ export default class GameNormal extends React.Component {
             cards: [],
             runningTime: 0, timerIsActive: false,
             gameOver: false,
+            lastCardFlipped: -1,
             firstUncoveredCardContent: '', firstUncoveredCardId: -1,
             secondUncoveredCardContent: '', secondUncoveredCardId: -1,
 
@@ -38,13 +39,35 @@ export default class GameNormal extends React.Component {
     }
     setMenu = () => { this.setState({ menu: !this.state.menu }) }
     setReset = () => {
-        this.setState({ 
-            startButton: 'grid', 
-            cards: [], 
-            runningTime: 0,
-            gameOver: false, 
+        this.setState({
+            startButton: 'grid',
+            cards: [],
+            runningTime: 0, timerIsActive: false,
+            gameOver: false,
+            lastCardFlipped: -1,
             firstUncoveredCardContent: '', firstUncoveredCardId: -1,
             secondUncoveredCardContent: '', secondUncoveredCardId: -1,
+
+            cardFlippedA: false, cardBackA: '', cardContentA: '', cardVisibleA: 'visible', cardIsVisibleA: true,
+            cardFlippedB: false, cardBackB: '', cardContentB: '', cardVisibleB: 'visible', cardIsVisibleB: true,
+            cardFlippedC: false, cardBackC: '', cardContentC: '', cardVisibleC: 'visible', cardIsVisibleC: true,
+            cardFlippedD: false, cardBackD: '', cardContentD: '', cardVisibleD: 'visible', cardIsVisibleD: true,
+
+            cardFlippedE: false, cardBackE: '', cardContentE: '', cardVisibleE: 'visible', cardIsVisibleE: true,
+            cardFlippedF: false, cardBackF: '', cardContentF: '', cardVisibleF: 'visible', cardIsVisibleF: true,
+            cardFlippedG: false, cardBackG: '', cardContentG: '', cardVisibleG: 'visible', cardIsVisibleG: true,
+            cardFlippedH: false, cardBackH: '', cardContentH: '', cardVisibleH: 'visible', cardIsVisibleH: true,
+
+            cardFlippedI: false, cardBackI: '', cardContentI: '', cardVisibleI: 'visible', cardIsVisibleI: true,
+            cardFlippedJ: false, cardBackJ: '', cardContentJ: '', cardVisibleJ: 'visible', cardIsVisibleJ: true,
+            cardFlippedK: false, cardBackK: '', cardContentK: '', cardVisibleK: 'visible', cardIsVisibleK: true,
+            cardFlippedL: false, cardBackL: '', cardContentL: '', cardVisibleL: 'visible', cardIsVisibleL: true,
+
+            cardFlippedM: false, cardBackM: '', cardContentM: '', cardVisibleM: 'visible', cardIsVisibleM: true,
+            cardFlippedN: false, cardBackN: '', cardContentN: '', cardVisibleN: 'visible', cardIsVisibleN: true,
+            cardFlippedO: false, cardBackO: '', cardContentO: '', cardVisibleO: 'visible', cardIsVisibleO: true,
+            cardFlippedP: false, cardBackP: '', cardContentP: '', cardVisibleP: 'visible', cardIsVisibleP: true
+
         })
         this.deleteCards('all')
         this.stopTimer()
@@ -53,25 +76,25 @@ export default class GameNormal extends React.Component {
         this.setState({
             startButton: 'none',
             cards: this.generateCards(),
-            cardBackA: 'card', cardVisibleA: 'visible', cardFlippedA: false,
-            cardBackB: 'card', cardVisibleB: 'visible', cardFlippedB: false,
-            cardBackC: 'card', cardVisibleC: 'visible', cardFlippedC: false,
-            cardBackD: 'card', cardVisibleD: 'visible', cardFlippedD: false,
+            cardBackA: 'card', cardVisibleA: 'visible', cardIsVisibleA: true, cardFlippedA: false,
+            cardBackB: 'card', cardVisibleB: 'visible', cardIsVisibleB: true, cardFlippedB: false,
+            cardBackC: 'card', cardVisibleC: 'visible', cardIsVisibleC: true, cardFlippedC: false,
+            cardBackD: 'card', cardVisibleD: 'visible', cardIsVisibleD: true, cardFlippedD: false,
 
-            cardBackE: 'card', cardVisibleE: 'visible', cardFlippedE: false,
-            cardBackF: 'card', cardVisibleF: 'visible', cardFlippedF: false,
-            cardBackG: 'card', cardVisibleG: 'visible', cardFlippedG: false,
-            cardBackH: 'card', cardVisibleH: 'visible', cardFlippedH: false,
+            cardBackE: 'card', cardVisibleE: 'visible', cardIsVisibleE: true, cardFlippedE: false,
+            cardBackF: 'card', cardVisibleF: 'visible', cardIsVisibleF: true, cardFlippedF: false,
+            cardBackG: 'card', cardVisibleG: 'visible', cardIsVisibleG: true, cardFlippedG: false,
+            cardBackH: 'card', cardVisibleH: 'visible', cardIsVisibleH: true, cardFlippedH: false,
 
-            cardBackI: 'card', cardVisibleI: 'visible', cardFlippedI: false,
-            cardBackJ: 'card', cardVisibleJ: 'visible', cardFlippedJ: false,
-            cardBackK: 'card', cardVisibleK: 'visible', cardFlippedK: false,
-            cardBackL: 'card', cardVisibleL: 'visible', cardFlippedL: false,
+            cardBackI: 'card', cardVisibleI: 'visible', cardIsVisibleI: true, cardFlippedI: false,
+            cardBackJ: 'card', cardVisibleJ: 'visible', cardIsVisibleJ: true, cardFlippedJ: false,
+            cardBackK: 'card', cardVisibleK: 'visible', cardIsVisibleK: true, cardFlippedK: false,
+            cardBackL: 'card', cardVisibleL: 'visible', cardIsVisibleL: true, cardFlippedL: false,
 
-            cardBackM: 'card', cardVisibleM: 'visible', cardFlippedM: false,
-            cardBackN: 'card', cardVisibleN: 'visible', cardFlippedN: false,
-            cardBackO: 'card', cardVisibleO: 'visible', cardFlippedO: false,
-            cardBackP: 'card', cardVisibleP: 'visible', cardFlippedP: false
+            cardBackM: 'card', cardVisibleM: 'visible', cardIsVisibleM: true, cardFlippedM: false,
+            cardBackN: 'card', cardVisibleN: 'visible', cardIsVisibleN: true, cardFlippedN: false,
+            cardBackO: 'card', cardVisibleO: 'visible', cardIsVisibleO: true, cardFlippedO: false,
+            cardBackP: 'card', cardVisibleP: 'visible', cardIsVisibleP: true, cardFlippedP: false
         })
         this.startTimer()
     }
@@ -221,7 +244,11 @@ export default class GameNormal extends React.Component {
             this.state.cardFlippedI + this.state.cardFlippedJ + this.state.cardFlippedK + this.state.cardFlippedL +
             this.state.cardFlippedM + this.state.cardFlippedN + this.state.cardFlippedO + this.state.cardFlippedP
 
-        if (uncoveredCards === 2) { this.hideCards() }
+        let cardsLeft =
+            this.state.cardIsVisibleA + this.state.cardIsVisibleB + this.state.cardIsVisibleC + this.state.cardIsVisibleD +
+            this.state.cardIsVisibleE + this.state.cardIsVisibleF + this.state.cardIsVisibleG + this.state.cardIsVisibleH +
+            this.state.cardIsVisibleI + this.state.cardIsVisibleJ + this.state.cardIsVisibleK + this.state.cardIsVisibleL +
+            this.state.cardIsVisibleM + this.state.cardIsVisibleN + this.state.cardIsVisibleO + this.state.cardIsVisibleP
 
         let cardContent
         switch (id) {
@@ -244,26 +271,20 @@ export default class GameNormal extends React.Component {
             default: console.log("Something went terribly wrong")
         }
 
-        const cardsLeft =
-            this.state.cardIsVisibleA + this.state.cardIsVisibleB + this.state.cardIsVisibleC + this.state.cardIsVisibleD +
-            this.state.cardIsVisibleE + this.state.cardIsVisibleF + this.state.cardIsVisibleG + this.state.cardIsVisibleH +
-            this.state.cardIsVisibleI + this.state.cardIsVisibleJ + this.state.cardIsVisibleK + this.state.cardIsVisibleL +
-            this.state.cardIsVisibleM + this.state.cardIsVisibleN + this.state.cardIsVisibleO + this.state.cardIsVisibleP
+        if (uncoveredCards === 2) { this.hideCards() }
 
         if (cardsLeft === 2 && uncoveredCards === 1) {
             this.deleteCards('all')
             this.stopTimer()
             this.setState({ gameOver: true })
+            console.log('GAME ENDS NOW!')
+            console.log('GAME ENDS NOW!')
+            console.log('GAME ENDS NOW!')
+            cardsLeft = 0
+            uncoveredCards = 0
         }
-        else if (this.state.firstUncoveredCardContent === '') {
-            this.setState({ firstUncoveredCardContent: cardContent, firstUncoveredCardId: id })
-        }
-        else if (this.state.secondUncoveredCardContent === '') {
-            this.setState({ secondUncoveredCardContent: cardContent, secondUncoveredCardId: id })
-        }
-        else if (uncoveredCards > 0 && this.state.firstUncoveredCardContent === this.state.secondUncoveredCardContent
-            && this.state.firstUncoveredCardId !== this.state.secondUncoveredCardId) {
-            console.log('Pair!')
+
+        if (this.state.firstUncoveredCardContent === this.state.secondUncoveredCardContent) {
             this.deleteCards(this.state.firstUncoveredCardId)
             this.deleteCards(this.state.secondUncoveredCardId)
             this.setState({
@@ -271,18 +292,32 @@ export default class GameNormal extends React.Component {
                 firstUncoveredCardId: -1, secondUncoveredCardId: -1
             })
         }
-        else {
-            this.setState({
-                firstUncoveredCardContent: '', secondUncoveredCardContent: '',
-                firstUncoveredCardId: -1, secondUncoveredCardId: -1
-            })
+
+        if (this.state.lastCardFlipped !== id) {
+            if (this.state.firstUncoveredCardContent === '') {
+                this.setState({
+                    firstUncoveredCardContent: cardContent,
+                    firstUncoveredCardId: id,
+                    lastCardFlipped: id
+                })
+            }
+            else if (this.state.secondUncoveredCardContent === '') {
+                this.setState({
+                    secondUncoveredCardContent: cardContent,
+                    secondUncoveredCardId: id,
+                    lastCardFlipped: id
+                })
+            } else {
+                this.setState({
+                    firstUncoveredCardContent: '', secondUncoveredCardContent: '',
+                    firstUncoveredCardId: -1, secondUncoveredCardId: -1
+                })
+            }
         }
-        // console.log(this.state.firstUncoveredCard)
-        // console.log(this.state.secondUncoveredCard)
-        console.log("cardsLeft: " + cardsLeft)
-
-        console.log("uncoveredCards: " + uncoveredCards)
-
+        // console.log("first card:" + this.state.firstUncoveredCardContent)
+        // console.log("second card: " + this.state.secondUncoveredCardContent)
+        // console.log("cardsLeft: " + cardsLeft)
+        // console.log("uncoveredCards: " + uncoveredCards)
     }
 
     deleteCardA = () => { this.setState({ cardVisibleA: 'hidden', cardIsVisibleA: false }) }
@@ -304,6 +339,7 @@ export default class GameNormal extends React.Component {
 
     deleteCards = (id) => {
         switch (id) {
+            case -1: ; break
             case 0: this.deleteCardA(); break
             case 1: this.deleteCardB(); break
             case 2: this.deleteCardC(); break
@@ -390,8 +426,6 @@ export default class GameNormal extends React.Component {
                                 : <p className={this.state.cardBackA}></p>}
                         </div>
                     </div>
-                    {console.log(this.props.cardSet)}
-                    {console.log(this.generateCardSet())}
 
                     {/* Card B */}
                     <div className={this.state.cardVisibleB}>
