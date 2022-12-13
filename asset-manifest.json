@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/match-pairs-game/static/css/main.43a7f8f0.css",
-    "main.js": "/match-pairs-game/static/js/main.1cfe2dc4.js",
+    "main.css": "/match-pairs-game/static/css/main.7c1b084a.css",
+    "main.js": "/match-pairs-game/static/js/main.ee156f7f.js",
     "static/media/RubikGemstones-Regular.ttf": "/match-pairs-game/static/media/RubikGemstones-Regular.2d68e250828973f224f5.ttf",
     "index.html": "/match-pairs-game/index.html",
-    "main.43a7f8f0.css.map": "/match-pairs-game/static/css/main.43a7f8f0.css.map",
-    "main.1cfe2dc4.js.map": "/match-pairs-game/static/js/main.1cfe2dc4.js.map"
+    "main.7c1b084a.css.map": "/match-pairs-game/static/css/main.7c1b084a.css.map",
+    "main.ee156f7f.js.map": "/match-pairs-game/static/js/main.ee156f7f.js.map"
   },
   "entrypoints": [
-    "static/css/main.43a7f8f0.css",
-    "static/js/main.1cfe2dc4.js"
+    "static/css/main.7c1b084a.css",
+    "static/js/main.ee156f7f.js"
   ]
 }
