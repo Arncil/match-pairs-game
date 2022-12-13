@@ -256,7 +256,6 @@ export default class GameHard extends React.Component {
 
         let cardContent
         switch (id) {
-            case -1: ; break
             case 0: cardContent = this.state.cardContentA; break
             case 1: cardContent = this.state.cardContentB; break
             case 2: cardContent = this.state.cardContentC; break
@@ -288,8 +287,13 @@ export default class GameHard extends React.Component {
             cardsLeft = 0
             uncoveredCards = 0
         }
-
-        if (this.state.firstUncoveredCardContent === this.state.secondUncoveredCardContent) {
+        if (uncoveredCards === 0) {
+            this.setState({
+                firstUncoveredCardContent: '', secondUncoveredCardContent: '',
+                firstUncoveredCardId: -1, secondUncoveredCardId: -1
+            })
+        }
+        if (this.state.firstUncoveredCardContent === this.state.secondUncoveredCardContent && uncoveredCards === 2) {
             this.deleteCards(this.state.firstUncoveredCardId)
             this.deleteCards(this.state.secondUncoveredCardId)
             this.setState({
@@ -298,31 +302,31 @@ export default class GameHard extends React.Component {
             })
         }
 
-        if (this.state.lastCardFlipped !== id) {
-            if (this.state.firstUncoveredCardContent === '') {
-                this.setState({
-                    firstUncoveredCardContent: cardContent,
-                    firstUncoveredCardId: id,
-                    lastCardFlipped: id
-                })
-            }
-            else if (this.state.secondUncoveredCardContent === '') {
-                this.setState({
-                    secondUncoveredCardContent: cardContent,
-                    secondUncoveredCardId: id,
-                    lastCardFlipped: id
-                })
-            } else {
-                this.setState({
-                    firstUncoveredCardContent: '', secondUncoveredCardContent: '',
-                    firstUncoveredCardId: -1, secondUncoveredCardId: -1
-                })
-            }
+        if (this.state.firstUncoveredCardContent === '' && uncoveredCards > 0 && this.state.lastCardFlipped !== id) {
+            this.setState({
+                firstUncoveredCardContent: cardContent,
+                firstUncoveredCardId: id,
+                lastCardFlipped: id
+            })
         }
+        else if (this.state.secondUncoveredCardContent === '') {
+            this.setState({
+                secondUncoveredCardContent: cardContent,
+                secondUncoveredCardId: id,
+                lastCardFlipped: id
+            })
+        } else {
+            this.setState({
+                firstUncoveredCardContent: '', secondUncoveredCardContent: '',
+                firstUncoveredCardId: -1, secondUncoveredCardId: -1
+            })
+        }
+
         // console.log("first card:" + this.state.firstUncoveredCardContent)
         // console.log("second card: " + this.state.secondUncoveredCardContent)
         // console.log("cardsLeft: " + cardsLeft)
         // console.log("uncoveredCards: " + uncoveredCards)
+        // console.log("last card flipped: " + this.state.lastCardFlipped)
     }
 
     deleteCardA = () => { this.setState({ cardVisibleA: 'hidden', cardIsVisibleA: false }) }
